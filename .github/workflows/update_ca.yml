@@ -43,7 +43,7 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PEM_FILE }}
-          owner: ${{ github.event.inputs.organization }}  
+          owner: ${{ vars.ORGANIZATION }}  
 
       - name: Trigger Workflow in Another Repository
         run: |
