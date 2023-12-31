@@ -56,5 +56,5 @@ jobs:
             curl -L \
               -X POST \
               -H "Accept: application/vnd.github+json" \
-              https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/repos/repo_owner/repo_name/dispatches \
-              -d "{\"event_type\": \"$event_type\", \"client_payload\": {\"ca_name\": \"$ca_name\", \"ca_image\": \"$ca_image\"}}"
+              https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/repos/${{ vars.ORGANIZATION }}/${{ vars.INF_REP_NAME }}/dispatches \
+              -d "{\"event_type\": \"$update-ca-workflow\", \"client_payload\": {\"ca_name\": \"$ca_name\", \"ca_image\": \"$ca_image\"}}"
